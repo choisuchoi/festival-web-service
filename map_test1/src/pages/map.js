@@ -33,18 +33,23 @@ function Map(props) {
                 clickable: true
             });
 
-            // 클릭한 축제의 id를 form형식으로 서버에게 전달
+            // 클릭한 축제의 id를 form형식으로 서버에게 전달    
             kakao.maps.event.addListener(marker, "click", function () {
                 const formData = new FormData();
                 const festivalId = festivalPosition[i].title;
                 formData.append("id", festivalId);
-                axios.post("http://localhost:3000/get_festival", formData)
-                    .then(response => {
-                        console.log("Festival_id sent to server:", response.data);
-                    })
-                    .catch(error => {
-                        console.error("Error sending data to server:", error);
-                    })
+                
+                axios({
+                    method:'post',
+                    url:'https://server_ip:server_port/get_festival',
+                    data: formData,
+                }) 
+                .then(response => {
+                        console.log(response.data);
+                })
+                .catch(error => {
+                        console.error(error);
+                })
             })
         }
     }, [props.festivalData]);   // props.festivalData가 변경되면 useEffect()실행
