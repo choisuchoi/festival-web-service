@@ -9,7 +9,7 @@ class DB :
     def get_all_festival_info(self):
         conn = pymysql.connect(host=self.host ,port=3306, user=self.user ,password=self.pw, database='festival')
         cur = conn.cursor()
-        sql = 'select * from table'
+        sql = 'select id, x, y from fastival_list'
         cur.execute(sql)
         all_festival_info = [list(item) for item in cur.fetchall()]
         conn.close()
@@ -28,12 +28,10 @@ class DB :
     
 if __name__ == "__main__" : 
 
-
-    """
     host = 'localhost'
-    user = 'admin'
+    user = 'festival_admin'
     pw ='1234'
     
 
     test = DB(host,user,pw)
-    """
+    print(test.get_all_festival_info())

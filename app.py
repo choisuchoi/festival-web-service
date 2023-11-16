@@ -35,7 +35,7 @@ def search_festival():
 if __name__ == "__main__":
     #connection DB
     db_host = 'localhost'
-    db_user = 'admin'
+    db_user = 'festival_admin'
     db_pw ='1234'
     festival_db = db.DB(db_host,db_user,db_pw)
     #start web
