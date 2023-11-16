@@ -9,8 +9,8 @@ app.secret_key = "software"
 @app.route('/')
 def home():
     festival_info = festival_db.get_all_festival_info()
-    print(festival_info)
-    input()
+    #print(festival_info)
+    # 가져오는 데이터는 [[id,x,y],[id,x,y] .... ] 형식이며 각각의 데이터 타입은 string , float, float이다.
     return render_template('main.html', item = festival_info)
 
 #click p-point
