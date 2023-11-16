@@ -9,6 +9,8 @@ app.secret_key = "software"
 @app.route('/')
 def home():
     festival_info = festival_db.get_all_festival_info()
+    print(festival_info)
+    input()
     return render_template('main.html', item = festival_info)
 
 #click p-point
@@ -24,7 +26,7 @@ def get_festival_data():
 
 #search festival info 
 # 특정 검색 인덱스를 통하여 DB에서 검색을 실시해서 해당 결과에 맞는 축제들을 return한다.
-@app.route('search_festival', methods = ['POST'])
+@app.route('/search_festival', methods = ['POST'])
 def search_festival():
 
     if request.method == 'POST' :
