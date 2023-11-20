@@ -18,9 +18,10 @@ class DB :
     def get_festival_info(self, id):
         conn = pymysql.connect(host=self.host ,port=3306, user=self.user ,password=self.pw, database='festival')
         cur = conn.cursor()
-        sql = 'select * from table where id = %s'
+        sql = 'select * from fastival_list where id = %s'
         cur.execute(sql,(id))
-        festival_info = cur.fetchall()
+        festival_info = [list(item) for item in cur.fetchall()]
+        festival_info = festival_info[0]
         conn.close()
         return festival_info
 
@@ -34,4 +35,4 @@ if __name__ == "__main__" :
     
 
     test = DB(host,user,pw)
-    print(test.get_all_festival_info())
+    print(test.get_festival_info('ID064001'))
