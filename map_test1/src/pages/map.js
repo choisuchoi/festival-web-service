@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 
-import MapInfo from './mapInfo'
+import MapList from './mapList'
+
 
 const { kakao } = window;
 
 function Map(props) {
-    const [selectedFestival, setSelectedFestival] = useState(null);
 
     useEffect(() => {
         // 카카오 맵 생성
         const container = document.getElementById("map");
         const options = {
-            center: new kakao.maps.LatLng(35.2383442, 128.6881997),
-            level: 15
+            center: new kakao.maps.LatLng(35.206231, 127.861908),
+            level: 12
         };
         const map = new kakao.maps.Map(container, options);
 
@@ -21,7 +21,6 @@ function Map(props) {
         const festivalPosition = props.festivalData.map(item => ({
             title: item.id,
             latlng: new kakao.maps.LatLng(item.location.x, item.location.y),
-            // info: item.information
         }))
 
         // 카카오 맵 마커 생성
@@ -52,17 +51,15 @@ function Map(props) {
                 })
             })
         }
-    }, [props.festivalData]);   // props.festivalData가 변경되면 useEffect()실행
+    }, [props.festivalData.length]);   // props.festivalData가 변경되면 useEffect()실행
 
     // 지도를 그리는 javascript API는 index.html에서 불러온다.
     return (
         <div>
-            <h3>Map</h3>
             <div id="map" style={{
                 width: '500px',
                 height: '500px'
             }}></div>
-            <MapInfo />
         </div>
     );
 }
