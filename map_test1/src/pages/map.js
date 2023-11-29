@@ -39,16 +39,16 @@ function Map(props) {
                 formData.append("id", festivalId);
                 
                 axios({
-                    method:'POST',
-                    url:'/api/get_festival',
+                    method: 'POST',
+                    url: '/api/get_festival',
                     data: formData,
-                }) 
-                .then(response => {
+                })
+                    .then(response => {
                         console.log(response.data);
-                })
-                .catch(error => {
+                    })
+                    .catch(error => {
                         console.error(error);
-                })
+                    })
             })
         }
     }, [props.festivalData.length]);   // props.festivalData가 변경되면 useEffect()실행

@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
-function MapInfo(props) {
-    // const [festivalInfo, setFestivalInfo] = useState([]);
-
-    // useEffect(() => {
-    //     setFestivalInfo(festivalData);
-    // });
+function MapList(props) {
 
     return (
         <div>
-            <h3>Map List</h3>
+            <h3></h3>
         </div>
     );
 }
 
-export default MapInfo;
+export default MapList;
