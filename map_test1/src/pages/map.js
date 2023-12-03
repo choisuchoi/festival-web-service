@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const { kakao } = window;
 
-function Map({ festivalData }) {
+function Map({ festivalData, selectFestival }) {
 
     useEffect(() => {
         // 카카오 맵 생성
@@ -16,7 +16,8 @@ function Map({ festivalData }) {
 
         // 마커 정보 생성
         const festivalPosition = festivalData.map(item => ({
-            title: item.id,
+            id: item.id,
+            title: item.name,
             latlng: new kakao.maps.LatLng(item.x, item.y),
         }))
 
@@ -32,7 +33,7 @@ function Map({ festivalData }) {
             // 클릭한 축제의 id를 form형식으로 서버에게 전달    
             kakao.maps.event.addListener(marker, "click", function () {
                 const formData = new FormData();
-                const festivalId = festivalPosition[i].title;
+                const festivalId = festivalPosition[i].id;
                 formData.append("id", festivalId);
                 
                 axios({
@@ -41,7 +42,7 @@ function Map({ festivalData }) {
                     data: formData,
                 })
                     .then(response => {
-                        console.log(response.data);
+                        selectFestival(response.data);
                     })
                     .catch(error => {
                         console.error(error);

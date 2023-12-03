@@ -60,7 +60,7 @@ function Select({ selectFestival }) {
     }
 
     return (
-        <div>
+        <div className="select-container">
             <select onChange={(e) => loc=e.target.value}>
                 {city.map((city, index) => (
                     <option key={index} value={city.value}>{city.name}</option>

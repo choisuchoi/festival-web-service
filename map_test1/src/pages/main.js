@@ -30,7 +30,7 @@ function Main() {
         <div className="festival-body">
             <h1>Main Page</h1>
             <Select selectFestival={changeFestival} />
-            <Map festivalData={festivalInfo} />
+            <Map festivalData={festivalInfo} selectFestival={changeFestival} />
             <MapList festivalData={festivalInfo} />
         </div>
     )
