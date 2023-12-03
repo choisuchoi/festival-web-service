@@ -12,6 +12,31 @@ code {
     monospace;
 }
 
-.location {
+.default {
   padding: 20px
+}
+
+ul {
+  list-style: none;
+}
+
+.festival-body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.festival-list {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  gap: 20px;
+}
+
+.festival-item {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }

@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
+import festivalTest from "../data/festivalData.json"
 
-function Select({ setFestivalInfo }) {
+let loc = '';
+let mon = '';
+
+function Select({ selectFestival }) {
     const city = [
         {name:'지역', value:''},
         {name:'창원시', value:'창원'},
@@ -33,7 +37,7 @@ function Select({ setFestivalInfo }) {
         {name:'12월', value:'12'}
     ];
 
-    // 버튼 클릭시 setFestivalInfo 호출로 festivalInfo 갱신
+    // 버튼 클릭시 서버에 필터링된 축제 정보 요청
     function handleFilterChange() {
         const formData = new FormData();
         const festivalLocation = loc;
@@ -48,15 +52,12 @@ function Select({ setFestivalInfo }) {
         })
             .then(response => {
                 console.log(response.data);
-                // setFestivalInfo(response.data)
+                selectFestival(response.data);
             })
             .catch(error => {
                 console.error(error);
             })
     }
-
-    let loc = '';
-    let mon = '';
 
     return (
         <div>

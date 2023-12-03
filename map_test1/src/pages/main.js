@@ -6,32 +6,30 @@ import Map from './map'
 import MapList from './mapList'
 
 function Main() {
-    // Json이 객체들의 배열로 구성되어 있으므로 초기 상태를 []로 설정해준다.
     const [festivalInfo, setFestivalInfo] = useState([]);
-    // const [festivalFilter, setFestivalFilter] = useState({ location: '', month: '' });
 
-    // function changeFilter(location, month) { 
-    //     setFestivalFilter({ location, month }); 
-    //     console.log(festivalFilter);
-    // }
+    function changeFestival(newFestival) {
+        setFestivalInfo(newFestival); 
+    }
 
     useEffect(() => {
         axios({
-            method: 'get',
+            method: 'GET',
             url: '/api/'
         })
             .then(response => {
                 setFestivalInfo(response.data);
+                console.log(typeof(festivalInfo));
             })
             .catch(error => {
-                console.error('Error fetching initial festival info: ', error);
+                console.error(error);
             })
-    }, []); // filter가 변경될 때만 useEffect실행
+    }, []);
 
     return (
-        <div className="location">
+        <div className="festival-body">
             <h1>Main Page</h1>
-            <Select festivalData={setFestivalInfo}/>
+            <Select selectFestival={changeFestival} />
             <Map festivalData={festivalInfo} />
             <MapList festivalData={festivalInfo} />
         </div>
