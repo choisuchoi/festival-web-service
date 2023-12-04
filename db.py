@@ -9,7 +9,8 @@ class DB :
     def get_all_festival_info(self):
         conn = pymysql.connect(host=self.host ,port=3306, user=self.user ,password=self.pw, database='festival')
         cur = conn.cursor()
-        sql = 'select id, x, y from fastival_list'
+        #sql = 'select id, x, y from fastival_list'
+        sql = 'select * from fastival_list'
         cur.execute(sql)
         all_festival_info = [list(item) for item in cur.fetchall()]
         conn.close()

@@ -12,9 +12,10 @@ def home():
     festival_info = festival_db.get_all_festival_info()
     total_list = list()
     for i, item in enumerate(festival_info):
-        data_dict = { 'id' :item[0]}
-        place_list = {'x': item[2], 'y' : item[1]}
-        data_dict['location'] = place_list
+        #data_dict = { 'id' :item[0]}
+        #place_list = {'x': item[2], 'y' : item[1]}
+        #data_dict['location'] = place_list
+        data_dict = {'id' : item[0], 'name' : item[1], 'address' : item[2], 'x' : item[4], 'y' : item[3], 'place_n' : item[5], 'begin_date' : item[6], 'end_date' : item[7], 'detail' : item[8]}
         total_list.append(data_dict)
     return total_list
 
