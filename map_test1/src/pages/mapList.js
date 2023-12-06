@@ -14,11 +14,11 @@ function MapList({ festivalData }) {
                     <Link key={festival.id} to={`/info/${festival.id}`} state={{festivalData: festival}}>
                         <div className="festival-item">
                             <img className='festival-list-image' src={"/" + festival.img_src}></img> <br />
-                            <strong>ID:</strong> {festival.id} <br />
-                            <strong>Name:</strong> {festival.name} <br />
-                            <strong>Begin:</strong> {festival.begin_date} <br />
-                            <strong>End:</strong> {festival.end_date} <br />
-                            <strong>Location:</strong> {festival.place_n} <br /><br />
+                            <div className='festival-list-font'>
+                                <strong>{festival.name}</strong> <br />
+                                <small>{festival.begin_date} ~ {festival.end_date}</small> <br />
+                                <small>{festival.place_n}</small>
+                            </div>  
                         </div>
                     </Link>
                 ))}

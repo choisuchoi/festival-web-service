@@ -61,7 +61,7 @@ a {
 
 .festival-list {
   display: grid;
-  grid-template-columns: repeat(3, 300px);
+  grid-template-columns: repeat(3, 280px);
   gap: 20px;
 }
 
@@ -73,10 +73,14 @@ a {
   border: none;
 }
 
+.festival-list-font {
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
 .festival-item {
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid #ddd;
   padding: 10px;
   border-radius: 10px;
 }
