@@ -54,10 +54,7 @@ function Map({ festivalData, selectFestival }) {
     // 지도를 그리는 javascript API는 index.html에서 불러온다.
     return (
         <div>
-            <div id="map" style={{
-                width: '700px',
-                height: '500px'
-            }}></div>
+            <div id="map" className='map'></div>
         </div>
     );
 }

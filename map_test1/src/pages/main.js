@@ -19,7 +19,6 @@ function Main() {
         })
             .then(response => {
                 setFestivalInfo(response.data);
-                console.log(typeof(festivalInfo));
             })
             .catch(error => {
                 console.error(error);
@@ -28,7 +27,7 @@ function Main() {
 
     return (
         <div className="festival-body">
-            <h1>Main Page</h1>
+            <img src="/image/title.jpg" width="300"></img>
             <Select selectFestival={changeFestival} />
             <Map festivalData={festivalInfo} selectFestival={changeFestival} />
             <MapList festivalData={festivalInfo} />

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import festivalTest from "../data/festivalData.json"
 
 let loc = '';
 let mon = '';
@@ -51,7 +50,6 @@ function Select({ selectFestival }) {
             data: formData,
         })
             .then(response => {
-                console.log(response.data);
                 selectFestival(response.data);
             })
             .catch(error => {

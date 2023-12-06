@@ -2,6 +2,7 @@ import React from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import Main from "./pages/main"
+import MapInfo from "./pages/mapInfo";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />}></Route>
+          <Route path="/info/:id" element={<MapInfo />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
