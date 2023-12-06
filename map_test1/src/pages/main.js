@@ -3,7 +3,7 @@ import axios from "axios";
 
 import Select from "./select";
 import Map from './map'
-import MapList from './mapList'
+import FestivalList from './festivalList'
 import "../fonts/Font.css";
 
 function Main() {
@@ -31,7 +31,7 @@ function Main() {
             <img src="/image/title.jpg" width="300"></img>
             <Select selectFestival={changeFestival} />
             <Map festivalData={festivalInfo} selectFestival={changeFestival} />
-            <MapList festivalData={festivalInfo} />
+            <FestivalList festivalData={festivalInfo} />
         </div>
     )
 }

@@ -2,8 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Main from "./pages/main";
-import MapInfo from "./pages/mapInfo";
-import "./fonts/Font.css";
+import FestivalInfo from "./pages/festivalInfo";
 
 function App() {
   return (
@@ -12,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />}></Route>
-          <Route path="/info/:id" element={<MapInfo />}></Route>
+          <Route path="/info/:id" element={<FestivalInfo />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

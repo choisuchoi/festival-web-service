@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-function MapList({ festivalData }) {
+function FestivalList({ festivalData }) {
 
         const festivalDataArray = Object.values(festivalData);
         console.log(festivalDataArray);
@@ -27,4 +27,4 @@ function MapList({ festivalData }) {
     );
 }
 
-export default MapList;
+export default FestivalList;

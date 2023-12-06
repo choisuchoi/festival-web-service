@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useLocation } from 'react-router-dom';
 
-function MapInfo(props) {
+function FestivalInfo(props) {
     const location = useLocation();
     const festivalData = location.state.festivalData;
     console.log(festivalData);
@@ -21,4 +21,4 @@ function MapInfo(props) {
     );
 }
 
-export default MapInfo;
+export default FestivalInfo;
