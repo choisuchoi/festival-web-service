@@ -15,7 +15,7 @@ def home():
         #data_dict = { 'id' :item[0]}
         #place_list = {'x': item[2], 'y' : item[1]}
         #data_dict['location'] = place_list
-        data_dict = {'id' : item[0], 'name' : item[1], 'address' : item[2], 'x' : item[4], 'y' : item[3], 'place_n' : item[5], 'begin_date' : item[6], 'end_date' : item[7], 'detail' : item[8], 'img_src' : "image/" + item[0] + ".jpg"}
+        data_dict = {'id' : item[0], 'name' : item[1], 'address' : item[2], 'x' : item[4], 'y' : item[3], 'place_n' : item[5], 'begin_date' : item[6], 'end_date' : item[7], 'detail' : item[8], 'img_src' : "/image/" + item[0] + ".jpg"}
         total_list.append(data_dict)
     return total_list
 
@@ -30,7 +30,7 @@ def get_festival_data():
         festival_info = festival_db.get_festival_info(id)
         total_list = list()
         for i, item in enumerate(festival_info) :
-            data_dict = {'id' : item[0], 'name' : item[1], 'address' : item[2], 'x' : item[4], 'y' : item[3], 'place_n' : item[5], 'begin_date' : item[6], 'end_date' : item[7], 'detail' : item[8]}
+            data_dict = {'id' : item[0], 'name' : item[1], 'address' : item[2], 'x' : item[4], 'y' : item[3], 'place_n' : item[5], 'begin_date' : item[6], 'end_date' : item[7], 'detail' : item[8],, 'img_src' : "/image/" + item[0] + ".jpg"}
             total_list.append(data_dict)
         return total_list
 
@@ -44,7 +44,7 @@ def search_festival():
         festival_list = festival_db.search_festival_info(location, month)
         total_list = list()
         for i, item in enumerate(festival_list) :
-            data_dict = {'id' : item[0], 'name' : item[1], 'address' : item[2], 'x' : item[4], 'y' : item[3], 'place_n' : item[5], 'begin_date' : item[6], 'end_date' : item[7], 'detail' : item[8]}
+            data_dict = {'id' : item[0], 'name' : item[1], 'address' : item[2], 'x' : item[4], 'y' : item[3], 'place_n' : item[5], 'begin_date' : item[6], 'end_date' : item[7], 'detail' : item[8], 'img_src' : "/image/" + item[0] + ".jpg"}
             total_list.append(data_dict)
         return total_list
 
@@ -54,7 +54,7 @@ def test_festival():
     festival_list = festival_db.search_festival_info('창원', '4')
     total_list = list()
     for i, item in enumerate(festival_list) :
-        data_dict = {'id' : item[0], 'name' : item[1], 'address' : item[2], 'x' : item[4], 'y' : item[3], 'place_n' : item[5], 'begin_date' : item[6], 'end_date' : item[7], 'detail' : item[8]}
+        data_dict = {'id' : item[0], 'name' : item[1], 'address' : item[2], 'x' : item[4], 'y' : item[3], 'place_n' : item[5], 'begin_date' : item[6], 'end_date' : item[7], 'detail' : item[8], 'img_src' : "/image/" + item[0] + ".jpg"}
         total_list.append(data_dict)
     print(total_list)
     return jsonify(total_list)
