@@ -4,6 +4,7 @@ import axios from "axios";
 import Select from "./select";
 import Map from './map'
 import MapList from './mapList'
+import "../fonts/Font.css";
 
 function Main() {
     const [festivalInfo, setFestivalInfo] = useState([]);

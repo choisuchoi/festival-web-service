@@ -1,8 +1,9 @@
-import React from "react"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Main from "./pages/main"
+import Main from "./pages/main";
 import MapInfo from "./pages/mapInfo";
+import "./fonts/Font.css";
 
 function App() {
   return (
